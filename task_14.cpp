@@ -27,7 +27,7 @@ char *str_trim(const char *s)
         }
     }
     int res_len = end - start + 1;
-    char *res = new char[res_len];
+    char *res = new char[res_len + 1];
     for (int i = 0; i < (res_len); i++)
     {
         res[i] = s[start];
@@ -71,6 +71,7 @@ void str_reverse_words(char *s)
     }
 }
 
+/*
 int main()
 {
     std::cout << "test_7" << '\n';
@@ -87,3 +88,4 @@ int main()
     delete[] res;
     return 0;
 }
+*/
