@@ -36,7 +36,7 @@ char *str_alloc(const char *src)
     str_copy(res, src);
     return res;
 }
-
+/*
 int main()
 {
     char *s = new char[12];
@@ -67,3 +67,4 @@ int main()
     delete[] alloc_s;
     return 0;
 }
+*/
