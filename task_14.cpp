@@ -15,18 +15,15 @@ char *str_trim(const char *s)
         if (s[start] == ' ' && s[end] != ' ')
         {
             start++;
-            std::cout << start << " " << end << '\n';
         }
         else if (s[start] != ' ' && s[end] == ' ')
         {
             end--;
-            std::cout << start << " " << end << '\n';
         }
         else if (s[start] == ' ' && s[end] == ' ')
         {
             start++;
             end--;
-            std::cout << start << " " << end << '\n';
         }
     }
     int res_len = end - start + 1;
@@ -40,9 +37,38 @@ char *str_trim(const char *s)
     return res;
 }
 
+void str_reverse_word(char *s, int start, int end)
+{
+    if (str_len(s) <= 1)
+    {
+        return;
+    }
+    while (start < end)
+    {
+        char temp = s[start];
+        s[start] = s[end];
+        s[end] = temp;
+        start++;
+        end--;
+    }
+}
 void str_reverse_words(char *s)
 {
-    //
+    if (str_len(s) <= 1)
+    {
+        return;
+    }
+    str_reverse_word(s, 0, str_len(s) - 1);
+
+    int word_start = 0;
+    for (int i = 0; i <= str_len(s); i++)
+    {
+        if (s[i] == ' ' || s[i] == '\0')
+        {
+            str_reverse_word(s, word_start, i - 1);
+            word_start = i + 1;
+        }
+    }
 }
 
 int main()
@@ -53,5 +79,11 @@ int main()
     char *res = str_trim(s);
     str_print(res);
     std::cout << str_len(res) << '\n';
+    std::cout << "test_8" << '\n';
+    char new_s[] = "one two three";
+    str_reverse_words(new_s);
+    str_print(new_s);
+    delete[] s;
+    delete[] res;
     return 0;
 }
