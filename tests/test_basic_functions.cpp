@@ -27,6 +27,7 @@ TEST(BasicFunctionsTest, HandleDeleteFunc)
 	str_copy(test_del_s, text);
 	str_delete(test_del_s);
 	EXPECT_EQ(test_del_s, nullptr);
+	delete[] test_del_s;
 }
 
 TEST(BasicFunctionsTest, HandleAllocFunc)
@@ -54,4 +55,5 @@ TEST(TaskFunctionTest, HandleTrimFunc)
 	char test_res[] = "hello";
 	EXPECT_STREQ(res, test_res);
 	EXPECT_GT(str_len(s), str_len(res));
+	delete[] s;
 }

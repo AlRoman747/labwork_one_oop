@@ -9,10 +9,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 
-# ==========================================
-# Основной код проекта
-# ==========================================
-
 add_library(task14
     src/str_ops.cpp
     src/task_14.cpp
@@ -23,9 +19,6 @@ target_include_directories(task14
         ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
-# ==========================================
-# Основная программа
-# ==========================================
 
 add_executable(main
     src/main.cpp
@@ -36,9 +29,6 @@ target_link_libraries(main
         task14
 )
 
-# ==========================================
-# GoogleTest
-# ==========================================
 
 include(FetchContent)
 
@@ -52,9 +42,6 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
 FetchContent_MakeAvailable(googletest)
 
-# ==========================================
-# Тесты
-# ==========================================
 
 enable_testing()
 
