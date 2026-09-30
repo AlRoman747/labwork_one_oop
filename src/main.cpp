@@ -75,6 +75,7 @@ int main()
                 std::cout << "Чтобы работать со строками, введите её под цифрой 1" << '\n';
                 continue;
             }
+            std::cout << "ваша строка: ";
             str_print(buffer);
             continue;
         }
@@ -85,7 +86,7 @@ int main()
                 std::cout << "Чтобы работать со строками, введите её под цифрой 1" << '\n';
                 continue;
             }
-            std::cout << str_len(buffer) << '\n';
+            std::cout << "длинна вашей строки: " << str_len(buffer) << '\n';
             continue;
         }
         else if (input == 4)
@@ -98,8 +99,8 @@ int main()
             const std::size_t len_buff = str_len(buffer);
             char *new_d = new char[len_buff + 1];
             str_copy(new_d, buffer);
-            std::cout << "копия массива и её адрес: " << new_d << " " << (void *)new_d << '\n'
-                      << "массив и его адрес: " << buffer << " " << (void *)buffer << '\n';
+            std::cout << "копия строки и её адрес: " << new_d << " " << (void *)new_d << '\n'
+                      << "строка и его адрес: " << buffer << " " << (void *)buffer << '\n';
             delete[] new_d;
         }
         else if (input == 5)
@@ -130,6 +131,7 @@ int main()
                     std::cout << "Ошибка обработки строки\n";
                     continue;
                 }
+                std::cout << "ваша строка: ";
                 str_print(res);
 
                 delete[] res;
@@ -142,6 +144,7 @@ int main()
                 std::cout << "Введите строку: ";
                 char *new_buffer = string_input();
                 str_reverse_words(new_buffer);
+                std::cout << "ваша строка: ";
                 str_print(new_buffer);
 
                 delete[] new_buffer;
