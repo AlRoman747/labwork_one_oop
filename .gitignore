@@ -400,6 +400,5 @@ cython_debug/
 
 # Android studio 3.1+ serialized cache file
 .idea/
-
-.exe
-.o
+*.exe
+*.o
